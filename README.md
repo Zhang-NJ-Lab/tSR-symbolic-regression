@@ -1,6 +1,11 @@
 # symbolic-regression
+0107.xlsx  原始数据集（表格，含有输入特征和输出数据）
+Code.py 主代码(前半部分是传统SR， 后半部分t-SR)
 
-原始SR输出（默认）
+
+t-SR时皮尔森系数从0.39升到-0.43(目前只计算了皮尔森系数r；MSE, RMSE; MAE, R2等其他准确率评判数据需要进一步生成，目前还未计算）：
+
+原始SR输出（默认）：
 超参数为：population_size=1000,      generations=91, stopping_criteria=0.01,
                            p_crossover=0.8, p_subtree_mutation=0.05,
                            p_hoist_mutation=0.05, p_point_mutation=0.05,
@@ -113,3 +118,47 @@
 0.35088016639654024 12
 0.3467226914805537 14
 0.3219213897483089 34
+
+
+
+**t-sr输出**
+D:\NLP-Examples\pythonProject1\venv\Scripts\python.exe D:/NLP-Examples/pythonProject1/SR/Code.py
+    |   Population Average    |             Best Individual              |
+---- ------------------------- ------------------------------------------ ----------
+ Gen   Length          Fitness   Length          Fitness      OOB Fitness  Time Left
+   0    26.05          0.10791       31         0.402845         0.118691      1.07m
+0.3947151468614388 3
+0.3750015365554344 5
+0.35088016639654024 6
+0.3490623132075035 13
+0.36038298010415276 14
+0.35088016639654024 16
+0.3600302918282939 17
+0.35088016639654024 19
+0.3526158317185049 20
+0.32625950687967775 22
+0.33565840128865976 26
+0.32495365683555943 27
+0.3219575113611538 29
+D:\NLP-Examples\pythonProject1\venv\lib\site-packages\numpy\lib\function_base.py:2829: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+D:\NLP-Examples\pythonProject1\venv\lib\site-packages\numpy\lib\function_base.py:2830: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[None, :]
+**-0.4323155223757824**
+1 13 4 13
+0.4323155223757824
+1 13 13 4
+-0.4323155223757824
+4 13 1 13
+0.4323155223757824
+4 13 13 1
+0.4323155223757824
+13 1 4 13
+-0.4323155223757824
+13 1 13 4
+0.4323155223757824
+13 4 1 13
+-0.4323155223757824
+13 4 13 1
+
+Process finished with exit code 0
